@@ -14,7 +14,37 @@ get '/' do
   servers = load_servers
   return "Add the details of build server to the config.yml file to get started" unless servers
 
-  @projects = []
+  @projects = load_projects( servers )
+
+  @successful_projects = @projects.select { |p| p.last_build_status == 'success' }
+  @unsuccessful_projects = @projects.select { |p| p.last_build_status != 'success' }
+
+  erb :index
+end
+
+get '/:project_name.png' do |project_name|
+  projects = load_projects( load_servers )
+
+  project = projects.find { |p| p.name == project_name }
+
+  if project
+    project_state = project.activity == 'Sleeping' ? project.last_build_status : project.activity
+
+    image = case project_state
+      when 'success' then 'passing'
+      when 'failure' then 'failing'
+      else 'unknown'
+    end
+
+    content_type 'image/png'
+    File.read( File.join('public', 'images', 'status', "#{image}.png" ) )
+  else
+    status 404
+  end
+end
+
+def load_projects( servers )
+  projects = []
 
   servers.each do |server|
     open_opts = {}
@@ -23,19 +53,15 @@ get '/' do
     end
     begin
       xml = REXML::Document.new(open(server["url"], open_opts))
-      @projects.push(*accumulate_projects(server, xml))
+      projects.push(*accumulate_projects(server, xml))
     rescue => e
-      @projects.push(MonitoredProject.server_down(server, e))
+      projects.push(MonitoredProject.server_down(server, e))
     rescue Timeout::Error => e
-      @projects.push(MonitoredProject.server_down(server, e))
+      projects.push(MonitoredProject.server_down(server, e))
     end
   end
 
-  @projects = @projects.sort_by { |p| p.name.downcase }
-  @successful_projects = @projects.select { |p| p.last_build_status == 'success' }
-  @unsuccessful_projects = @projects.select { |p| p.last_build_status != 'success' }
-
-  erb :index
+  projects.sort_by { |p| p.name.downcase }
 end
 
 def load_servers
