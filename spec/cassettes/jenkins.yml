@@ -1,0 +1,418 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://ci.jenkins-ci.org/cc.xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Winstone Servlet Engine v0.9.10
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Content-Length:
+      - '2253'
+      Connection:
+      - Keep-Alive
+      Date:
+      - Fri, 15 Jun 2012 16:58:44 GMT
+      X-Powered-By:
+      - Servlet/2.5 (Winstone/0.9.10)
+      Set-Cookie:
+      - SERVERID=Local; path=/
+      Cache-Control:
+      - private
+    body:
+      encoding: US-ASCII
+      string: <Projects><Project webUrl="http://ci.jenkins-ci.org/job/infra_github_repository_list/"
+        name="infra_github_repository_list" lastBuildLabel="483" lastBuildTime="2012-06-15T04:01:21Z"
+        lastBuildStatus="Failure" activity="Sleeping"/><Project webUrl="http://ci.jenkins-ci.org/job/infra_plugin_changes_report/"
+        name="infra_plugin_changes_report" lastBuildLabel="192" lastBuildTime="2012-06-11T08:00:38Z"
+        lastBuildStatus="Failure" activity="Sleeping"/><Project webUrl="http://ci.jenkins-ci.org/job/infra_plugins_svn_to_git/"
+        name="infra_plugins_svn_to_git" lastBuildLabel="768" lastBuildTime="2010-11-21T16:03:50Z"
+        lastBuildStatus="Unknown" activity="Sleeping"/><Project webUrl="http://ci.jenkins-ci.org/job/infra_svnsync/"
+        name="infra_svnsync" lastBuildLabel="21243" lastBuildTime="2011-02-06T18:31:36Z"
+        lastBuildStatus="Unknown" activity="Sleeping"/><Project webUrl="http://ci.jenkins-ci.org/job/jenkins.rb_java-runtime/"
+        name="jenkins.rb_java-runtime" lastBuildLabel="1" lastBuildTime="2012-03-22T18:55:59Z"
+        lastBuildStatus="Failure" activity="Sleeping"/><Project webUrl="http://ci.jenkins-ci.org/job/jenkins_pom/"
+        name="jenkins_pom" lastBuildLabel="107" lastBuildTime="2012-06-10T04:00:41Z"
+        lastBuildStatus="Failure" activity="Sleeping"/><Project webUrl="http://ci.jenkins-ci.org/job/jenkins_rc_branch/"
+        name="jenkins_rc_branch" lastBuildLabel="243" lastBuildTime="2012-06-13T19:30:53Z"
+        lastBuildStatus="Failure" activity="Sleeping"/><Project webUrl="http://ci.jenkins-ci.org/job/junit-runtime-suite/"
+        name="junit-runtime-suite" lastBuildLabel="92" lastBuildTime="2012-04-24T09:06:08Z"
+        lastBuildStatus="Failure" activity="Sleeping"/><Project webUrl="http://ci.jenkins-ci.org/job/libs_svnkit/"
+        name="libs_svnkit" lastBuildLabel="11" lastBuildTime="2012-02-21T05:00:08Z"
+        lastBuildStatus="Failure" activity="Sleeping"/><Project webUrl="http://ci.jenkins-ci.org/job/tools_maven-hpi-plugin/"
+        name="tools_maven-hpi-plugin" lastBuildLabel="50" lastBuildTime="2012-06-01T17:36:15Z"
+        lastBuildStatus="Failure" activity="Sleeping"/><Project webUrl="http://ci.jenkins-ci.org/job/tools_maven-hpi-plugin-maven-2.x/"
+        name="tools_maven-hpi-plugin-maven-2.x" lastBuildLabel="43" lastBuildTime="2012-06-01T17:36:14Z"
+        lastBuildStatus="Failure" activity="Sleeping"/></Projects>
+    http_version: 
+  recorded_at: Fri, 15 Jun 2012 16:58:44 GMT
+- request:
+    method: get
+    uri: http://ci.jenkins-ci.org/job/infra_github_repository_list/lastBuild/api/json?tree=culprits%5BfullName,property%5Baddress%5D%5D
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Winstone Servlet Engine v0.9.10
+      Content-Type:
+      - application/javascript;charset=UTF-8
+      Content-Length:
+      - '15'
+      Connection:
+      - Keep-Alive
+      Date:
+      - Fri, 15 Jun 2012 16:58:44 GMT
+      X-Powered-By:
+      - Servlet/2.5 (Winstone/0.9.10)
+      Set-Cookie:
+      - SERVERID=Local; path=/
+      Cache-Control:
+      - private
+    body:
+      encoding: US-ASCII
+      string: ! '{"culprits":[]}'
+    http_version: 
+  recorded_at: Fri, 15 Jun 2012 16:58:44 GMT
+- request:
+    method: get
+    uri: http://ci.jenkins-ci.org/job/infra_plugin_changes_report/lastBuild/api/json?tree=culprits%5BfullName,property%5Baddress%5D%5D
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Winstone Servlet Engine v0.9.10
+      Content-Type:
+      - application/javascript;charset=UTF-8
+      Content-Length:
+      - '15'
+      Connection:
+      - Keep-Alive
+      Date:
+      - Fri, 15 Jun 2012 16:58:44 GMT
+      X-Powered-By:
+      - Servlet/2.5 (Winstone/0.9.10)
+      Set-Cookie:
+      - SERVERID=Local; path=/
+      Cache-Control:
+      - private
+    body:
+      encoding: US-ASCII
+      string: ! '{"culprits":[]}'
+    http_version: 
+  recorded_at: Fri, 15 Jun 2012 16:58:44 GMT
+- request:
+    method: get
+    uri: http://ci.jenkins-ci.org/job/infra_plugins_svn_to_git/lastBuild/api/json?tree=culprits%5BfullName,property%5Baddress%5D%5D
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 504
+      message: Gateway Time-out
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - close
+      Content-Type:
+      - text/html
+    body:
+      encoding: US-ASCII
+      string: ! '<html><body><h1>504 Gateway Time-out</h1>
+
+        The server didn''t respond in time.
+
+        </body></html>
+
+'
+    http_version: 
+  recorded_at: Fri, 15 Jun 2012 16:59:35 GMT
+- request:
+    method: get
+    uri: http://ci.jenkins-ci.org/job/infra_svnsync/lastBuild/api/json?tree=culprits%5BfullName,property%5Baddress%5D%5D
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Winstone Servlet Engine v0.9.10
+      Content-Type:
+      - application/javascript;charset=UTF-8
+      Content-Length:
+      - '15'
+      Connection:
+      - Keep-Alive
+      Date:
+      - Fri, 15 Jun 2012 16:59:35 GMT
+      X-Powered-By:
+      - Servlet/2.5 (Winstone/0.9.10)
+      Set-Cookie:
+      - SERVERID=Local; path=/
+      Cache-Control:
+      - private
+    body:
+      encoding: US-ASCII
+      string: ! '{"culprits":[]}'
+    http_version: 
+  recorded_at: Fri, 15 Jun 2012 16:59:35 GMT
+- request:
+    method: get
+    uri: http://ci.jenkins-ci.org/job/jenkins.rb_java-runtime/lastBuild/api/json?tree=culprits%5BfullName,property%5Baddress%5D%5D
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Winstone Servlet Engine v0.9.10
+      Content-Type:
+      - application/javascript;charset=UTF-8
+      Content-Length:
+      - '15'
+      Connection:
+      - Keep-Alive
+      Date:
+      - Fri, 15 Jun 2012 16:59:35 GMT
+      X-Powered-By:
+      - Servlet/2.5 (Winstone/0.9.10)
+      Set-Cookie:
+      - SERVERID=Local; path=/
+      Cache-Control:
+      - private
+    body:
+      encoding: US-ASCII
+      string: ! '{"culprits":[]}'
+    http_version: 
+  recorded_at: Fri, 15 Jun 2012 16:59:35 GMT
+- request:
+    method: get
+    uri: http://ci.jenkins-ci.org/job/jenkins_pom/lastBuild/api/json?tree=culprits%5BfullName,property%5Baddress%5D%5D
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Winstone Servlet Engine v0.9.10
+      Content-Type:
+      - application/javascript;charset=UTF-8
+      Content-Length:
+      - '15'
+      Connection:
+      - Keep-Alive
+      Date:
+      - Fri, 15 Jun 2012 16:59:35 GMT
+      X-Powered-By:
+      - Servlet/2.5 (Winstone/0.9.10)
+      Set-Cookie:
+      - SERVERID=Local; path=/
+      Cache-Control:
+      - private
+    body:
+      encoding: US-ASCII
+      string: ! '{"culprits":[]}'
+    http_version: 
+  recorded_at: Fri, 15 Jun 2012 16:59:35 GMT
+- request:
+    method: get
+    uri: http://ci.jenkins-ci.org/job/jenkins_rc_branch/lastBuild/api/json?tree=culprits%5BfullName,property%5Baddress%5D%5D
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Winstone Servlet Engine v0.9.10
+      Content-Type:
+      - application/javascript;charset=UTF-8
+      Content-Length:
+      - '104'
+      Connection:
+      - Keep-Alive
+      Date:
+      - Fri, 15 Jun 2012 16:59:35 GMT
+      X-Powered-By:
+      - Servlet/2.5 (Winstone/0.9.10)
+      Set-Cookie:
+      - SERVERID=Local; path=/
+      Cache-Control:
+      - private
+    body:
+      encoding: US-ASCII
+      string: ! '{"culprits":[{"fullName":"Kohsuke Kawaguchi","property":[{},{},{},{},{},{"address":"kk@kohsuke.org"}]}]}'
+    http_version: 
+  recorded_at: Fri, 15 Jun 2012 16:59:35 GMT
+- request:
+    method: get
+    uri: http://ci.jenkins-ci.org/job/junit-runtime-suite/lastBuild/api/json?tree=culprits%5BfullName,property%5Baddress%5D%5D
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Winstone Servlet Engine v0.9.10
+      Content-Type:
+      - application/javascript;charset=UTF-8
+      Content-Length:
+      - '99'
+      Connection:
+      - Keep-Alive
+      Date:
+      - Fri, 15 Jun 2012 16:59:35 GMT
+      X-Powered-By:
+      - Servlet/2.5 (Winstone/0.9.10)
+      Set-Cookie:
+      - SERVERID=Local; path=/
+      Cache-Control:
+      - private
+    body:
+      encoding: US-ASCII
+      string: ! '{"culprits":[{"fullName":"Dale Emery","property":[{},{},{},{},{},{"address":"dale@dhemery.com"}]}]}'
+    http_version: 
+  recorded_at: Fri, 15 Jun 2012 16:59:35 GMT
+- request:
+    method: get
+    uri: http://ci.jenkins-ci.org/job/libs_svnkit/lastBuild/api/json?tree=culprits%5BfullName,property%5Baddress%5D%5D
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Winstone Servlet Engine v0.9.10
+      Content-Type:
+      - application/javascript;charset=UTF-8
+      Content-Length:
+      - '104'
+      Connection:
+      - Keep-Alive
+      Date:
+      - Fri, 15 Jun 2012 16:59:35 GMT
+      X-Powered-By:
+      - Servlet/2.5 (Winstone/0.9.10)
+      Set-Cookie:
+      - SERVERID=Local; path=/
+      Cache-Control:
+      - private
+    body:
+      encoding: US-ASCII
+      string: ! '{"culprits":[{"fullName":"Kohsuke Kawaguchi","property":[{},{},{},{},{},{"address":"kk@kohsuke.org"}]}]}'
+    http_version: 
+  recorded_at: Fri, 15 Jun 2012 16:59:35 GMT
+- request:
+    method: get
+    uri: http://ci.jenkins-ci.org/job/tools_maven-hpi-plugin/lastBuild/api/json?tree=culprits%5BfullName,property%5Baddress%5D%5D
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Winstone Servlet Engine v0.9.10
+      Content-Type:
+      - application/javascript;charset=UTF-8
+      Content-Length:
+      - '104'
+      Connection:
+      - Keep-Alive
+      Date:
+      - Fri, 15 Jun 2012 16:59:35 GMT
+      X-Powered-By:
+      - Servlet/2.5 (Winstone/0.9.10)
+      Set-Cookie:
+      - SERVERID=Local; path=/
+      Cache-Control:
+      - private
+    body:
+      encoding: US-ASCII
+      string: ! '{"culprits":[{"fullName":"Kohsuke Kawaguchi","property":[{},{},{},{},{},{"address":"kk@kohsuke.org"}]}]}'
+    http_version: 
+  recorded_at: Fri, 15 Jun 2012 16:59:35 GMT
+- request:
+    method: get
+    uri: http://ci.jenkins-ci.org/job/tools_maven-hpi-plugin-maven-2.x/lastBuild/api/json?tree=culprits%5BfullName,property%5Baddress%5D%5D
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Winstone Servlet Engine v0.9.10
+      Content-Type:
+      - application/javascript;charset=UTF-8
+      Content-Length:
+      - '202'
+      Connection:
+      - Keep-Alive
+      Date:
+      - Fri, 15 Jun 2012 16:59:35 GMT
+      X-Powered-By:
+      - Servlet/2.5 (Winstone/0.9.10)
+      Set-Cookie:
+      - SERVERID=Local; path=/
+      Cache-Control:
+      - private
+    body:
+      encoding: US-ASCII
+      string: ! '{"culprits":[{"fullName":"Kohsuke Kawaguchi","property":[{},{},{},{},{},{"address":"kk@kohsuke.org"}]},{"fullName":"Nicolas
+        De Loof","property":[{},{},{},{},{},{"address":"nicolas.deloof@gmail.com"}]}]}'
+    http_version: 
+  recorded_at: Fri, 15 Jun 2012 16:59:35 GMT
+recorded_with: VCR 2.2.2

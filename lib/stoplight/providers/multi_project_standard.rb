@@ -14,6 +14,10 @@ module Stoplight::Providers
       raise Stoplight::Exceptions::NoProviderError, "a provider name must be specified"
     end
 
+    def builds_path
+      @options['builds_path'] ||= 'cc.xml'
+    end
+
     def projects
       if @response.parsed_response.nil? || @response.parsed_response['Projects'].nil?
         @projects ||= []

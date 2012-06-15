@@ -47,7 +47,6 @@ module Stoplight::Providers
     #   - `method`: the HTTP method (get, post, put, etc)
     def load_server_data(options = {})
       url = @options['url'].chomp('/') + '/' + (options[:path] || builds_path).chomp('/').reverse.chomp('/').reverse
-      p url
 
       url_options = {}
 

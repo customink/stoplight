@@ -5,9 +5,7 @@ require 'spec_helper'
 include Stoplight::Providers
 
 describe Sample do
-  before do
-    stub_request(:any, 'http://www.example.com').to_return(:status => 200)
-  end
+  use_vcr_cassette 'sample', :record => :new_episodes
 
   context 'provider' do
     it 'should return the correct provider name' do
