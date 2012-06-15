@@ -58,7 +58,7 @@ end
 private
 # Load the servers and projects from the YAML file
 def load_projects
-  @servers ||= YAML::load(ERB.new(File.read(File.expand_path('../config/servers.yml', __FILE__))).result)
+  @servers ||= YAML::load(File.read('config/servers.yml'))
 
   @projects = @servers.collect do |server|
     server_projects = get_server(server).projects

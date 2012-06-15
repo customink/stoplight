@@ -23,9 +23,11 @@ module Stoplight
     #   -  0: passed (success)
     #   -  1: failed (error, failure)
     # - `current_status` - the current status of the build:
-    #   - -1: unknwon
+    #   - -1: unknown
     #   -  0: done (sleeping, waiting)
     #   -  1: building (building, working, compiling)
+    # - `culprits` - the people who broke the build. This should be a hash in the following format:
+    #   { 'name' => '...', 'gravatar' => '...' }
     def initialize(options = {})
       @options = options
 

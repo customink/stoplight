@@ -14,6 +14,10 @@ module Stoplight::Providers
       'sample'
     end
 
+    def builds_path
+      @options['builds_path'] ||= '/repositories.json'
+    end
+
     def projects
       @projects ||= [
         Stoplight::Project.new({

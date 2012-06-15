@@ -11,6 +11,11 @@ Spork.prefork do
 
   require './lib/stoplight'
 
+  VCR.configure do |c|
+    c.cassette_library_dir = 'fixtures/vcr_cassettes'
+    c.hook_into :webmock
+  end
+
   RSpec.configure do |config|
     config.include Rack::Test::Methods
   end

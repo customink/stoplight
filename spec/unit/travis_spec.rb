@@ -13,7 +13,7 @@ describe Travis do
   context 'provider' do
     it 'should return the correct provider name' do
       stub_request(:any, 'http://www.example.com/repositories.json')
-      provider = Travis.new('url' => 'http://www.example.com/repositories.json')
+      provider = Travis.new('url' => 'http://www.example.com')
       provider.provider.should == 'travis'
     end
   end
@@ -22,7 +22,7 @@ describe Travis do
     context 'with no :owner_name query' do
       before do
         stub_sample_response
-        @provider = Travis.new('url' => 'http://www.example.com/repositories.json')
+        @provider = Travis.new('url' => 'http://www.example.com')
       end
 
       it 'should return an array of Stoplight::Project' do
@@ -99,6 +99,8 @@ describe Travis do
     ]'
 
     stub_request(:any, 'http://www.example.com/repositories.json').to_return(:status => 200, :body => body, :headers => { 'Content-Type' => 'application/json' })
+
+    # stub_request(:any, 'http://www.example.com/jtrim/abyss-navigation-rails/builds.json').to_return(:status => 200, :body => { 'matrix' => { 'author_name' => 'Bill Jones', 'author_email' => 'test@example.com' } }, :headers => { 'Content-Type' => 'application/json' })
   end
 
 end

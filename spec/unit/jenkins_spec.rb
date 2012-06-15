@@ -8,7 +8,7 @@ describe Jenkins do
 
   context 'provider' do
     it 'should return the correct provider name' do
-      stub_request(:any, 'http://www.example.com').to_return(:status => 200)
+      stub_request(:any, 'http://www.example.com/cc.xml').to_return(:status => 200)
       provider = Jenkins.new('url' => 'http://www.example.com')
       provider.provider.should == 'jenkins'
     end
