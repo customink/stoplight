@@ -32,15 +32,14 @@ module Stoplight::Providers
     	# for each culprit in culprits get their fullName and email and store it as a hash
       response['culprits'].collect do |culprit|
         user = {'name' => culprit['fullName']}
-        for property in culprit['property']
+        culprit['property'].each do |property|
           unless property['address'].nil? then
           	# create a hash of users email to use for their gravatar
             hash = Digest::MD5.hexdigest(property['address'].downcase)
             user['gravatar'] = "http://www.gravatar.com/avatar/#{hash}.jpg"
           end
         end
-        # reuse culprit object
-        culprit = user
+        user
       end
     end
   end
