@@ -44,10 +44,10 @@ $spacing: 5px;
 
       &.building {
         @include project-box($yellow);
-        animation: fade 0.5s alternate infinite ease-in-out;
-        -webkit-animation: fade 0.5s alternate infinite ease-in-out;
-        -moz-animation: fade 0.5s alternate infinite ease-in-out;
-        -ms-animation: fade 0.5s alternate infinite ease-in-out;
+        // animation: fade 0.5s alternate infinite ease-in-out;
+        // -webkit-animation: fade 0.5s alternate infinite ease-in-out;
+        // -moz-animation: fade 0.5s alternate infinite ease-in-out;
+        // -ms-animation: fade 0.5s alternate infinite ease-in-out;
       }
 
       p.status {

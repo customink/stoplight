@@ -23,7 +23,7 @@ var setFontSizes = function() {
     });
 
     $p.css({
-      fontSize: parseInt($h1.css('fontSize'))/4.0
+      fontSize: parseInt($h1.css('fontSize'),10)/4.0
     });
   });
-}
+};
