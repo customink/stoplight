@@ -16,7 +16,12 @@ $spacing: 5px;
       text-decoration: none;
     }
   }
-
+  h2 {
+    color: white;
+  }
+  figcaption {
+    color: white;
+  }
   .wrapper {
     float: left;
     position: relative;
@@ -44,36 +49,18 @@ $spacing: 5px;
 
       &.building {
         @include project-box($yellow);
-        // animation: fade 0.5s alternate infinite ease-in-out;
-        // -webkit-animation: fade 0.5s alternate infinite ease-in-out;
-        // -moz-animation: fade 0.5s alternate infinite ease-in-out;
-        // -ms-animation: fade 0.5s alternate infinite ease-in-out;
       }
 
       p.status {
-        margin-top: 20px;
+        margin-top: 10px;
+      }
+      ul.culprits {
+        text-align: center;
+        list-style-type: none;
+      }
+      ul.culprits li {
+        display: inline-block;
       }
     }
   }
-}
-
-
-@keyframes 'fade' {
-  0% { opacity:1.0; }
-  100% { opacity:0.5; }
-}
-
-@-webkit-keyframes 'fade' {
-  0% { opacity:1.0; }
-  100% { opacity:0.5; }
-}
-
-@-moz-keyframes 'fade' {
-  0% { opacity:1.0; }
-  100% { opacity:0.5; }
-}
-
-@-ms-keyframes 'fade' {
-  0% { opacity:1.0; }
-  100% { opacity:0.5; }
 }

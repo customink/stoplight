@@ -34,6 +34,8 @@ aside#mini-projects time.last-build-time { float: left; font-size: 9px; overflow
 
 #projects-board { font-family: 'Yanone Kaffeesatz', sans-serif; padding: 5px; position: absolute; top: 0; right: 0; bottom: 0; left: 201px; }
 #projects-board h1 a { color: #fff; text-decoration: none; }
+#projects-board h2 { color: white; }
+#projects-board figcaption { color: white; }
 #projects-board .wrapper { float: left; position: relative; }
 #projects-board .wrapper article.project { position: absolute; text-align: center; top: 5px; right: 5px; bottom: 5px; left: 5px; }
 #projects-board .wrapper article.project.unknown { border: 1px solid black; background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #333333), color-stop(100%, #1a1a1a)); background-image: -webkit-linear-gradient(#333333, #1a1a1a); background-image: -moz-linear-gradient(#333333, #1a1a1a); background-image: -o-linear-gradient(#333333, #1a1a1a); background-image: -ms-linear-gradient(#333333, #1a1a1a); background-image: linear-gradient(#333333, #1a1a1a); }
@@ -48,16 +50,6 @@ aside#mini-projects time.last-build-time { float: left; font-size: 9px; overflow
 #projects-board .wrapper article.project.building { border: 1px solid #806c00; background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffd700), color-stop(100%, #ccac00)); background-image: -webkit-linear-gradient(#ffd700, #ccac00); background-image: -moz-linear-gradient(#ffd700, #ccac00); background-image: -o-linear-gradient(#ffd700, #ccac00); background-image: -ms-linear-gradient(#ffd700, #ccac00); background-image: linear-gradient(#ffd700, #ccac00); }
 #projects-board .wrapper article.project.building h1 a { color: #fff; text-shadow: 1px 1px 0 #ffd700; }
 #projects-board .wrapper article.project.building p { color: #fff; }
-#projects-board .wrapper article.project p.status { margin-top: 20px; }
-
-@keyframes 'fade' { 0% { opacity: 1.0; }
-  100% { opacity: 0.5; } }
-
-@-webkit-keyframes 'fade' { 0% { opacity: 1.0; }
-  100% { opacity: 0.5; } }
-
-@-moz-keyframes 'fade' { 0% { opacity: 1.0; }
-  100% { opacity: 0.5; } }
-
-@-ms-keyframes 'fade' { 0% { opacity: 1.0; }
-  100% { opacity: 0.5; } }
+#projects-board .wrapper article.project p.status { margin-top: 10px; }
+#projects-board .wrapper article.project ul.culprits { text-align: center; list-style-type: none; }
+#projects-board .wrapper article.project ul.culprits li { display: inline-block; }
