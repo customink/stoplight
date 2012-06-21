@@ -46,8 +46,7 @@ module Stoplight::Providers
             user['gravatar'] = "http://www.gravatar.com/avatar/#{hash}.jpg"
           end
         end
-        # reuse culprit object
-        culprit = user
+        user
       end
 
       culprits.uniq

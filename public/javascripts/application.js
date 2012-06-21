@@ -11,6 +11,7 @@ var setFontSizes = function() {
     $element = $(element);
 
     $h1 = $element.find('h1');
+    $h2 = $element.find('h2');
     $a = $h1.find('a');
     $p = $element.find('p');
 
@@ -18,12 +19,16 @@ var setFontSizes = function() {
     maxCharacterWidth = ($element.width()/$a.html().length)*1.5;
 
     $h1.css({
-      fontSize: Math.min($element.height()/4.0, maxCharacterWidth),
-      marginTop: $element.height()/3.0
+      fontSize: Math.min($element.height()/6.0, maxCharacterWidth),
+      marginTop: $element.height()/10.0
     });
-
+    $h2.css({
+      fontSize: Math.min($element.height()/9.0, maxCharacterWidth),
+      marginTop: $element.height()/20.0,
+      marginBottom: $element.height()/20.0
+    });
     $p.css({
-      fontSize: parseInt($h1.css('fontSize'))/4.0
+      fontSize: parseInt($h1.css('fontSize'),10)/1.5
     });
   });
-}
+};

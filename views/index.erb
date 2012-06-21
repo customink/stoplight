@@ -49,6 +49,21 @@
               <h1>
                 <a href="<%= project.build_url%>" target="_TOP"><%= project.name %></a>
               </h1>
+              <% unless project.culprits.empty? %>
+                <h2>Culprits</h2>
+                <ul class="culprits">
+                  <% project.culprits.each do |culprit| %>
+                    <li>
+                        <figure>
+                        <% unless culprit['gravatar'].nil? %>
+                          <img src="<%= "#{culprit['gravatar']}?s=50&r=pg&d=identicon" %>">
+                        <% end %>
+                        <figcaption><%= culprit['name'] %></figcaption>
+                        </figure>
+                    </li>
+                  <% end %>
+                </ul>
+              <% end %>
               <p class="status">
                 Build <%= project.last_build_id %> <strong><%= project.last_build_status %></strong>
                 <% unless project.last_build_time.nil? %>
