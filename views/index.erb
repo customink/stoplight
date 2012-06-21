@@ -49,7 +49,7 @@
               <h1>
                 <a href="<%= project.build_url%>" target="_TOP"><%= project.name %></a>
               </h1>
-              <% unless project.culprits.nil? %>
+              <% unless project.culprits.empty? %>
                 <h2>Culprits</h2>
                 <ul class="culprits">
                   <% project.culprits.each do |culprit| %>
