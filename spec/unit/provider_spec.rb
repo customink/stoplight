@@ -72,6 +72,32 @@ describe Provider do
           provider.response.request.options[:query].should be_nil
         end
       end
+
+      context 'with proxy settings defined' do 
+        before do
+          stub_request(:any, 'http://www.example.com').to_return(:status => 200)
+        end
+
+        it "should set :http_proxyaddr" do
+          provider = Provider.new('url' => 'http://www.example.com', 'http_proxyaddr' => 'proxy')
+          provider.response.request.options[:http_proxyaddr].should == 'proxy'
+        end
+
+        it "should set :http_proxyport" do
+          provider = Provider.new('url' => 'http://www.example.com', 'http_proxyport' => '8000')
+          provider.response.request.options[:http_proxyport].should == '8000'
+        end
+
+        it "should set :http_proxyuser" do
+          provider = Provider.new('url' => 'http://www.example.com', 'http_proxyuser' => 'username')
+          provider.response.request.options[:http_proxyuser].should == 'username'
+        end
+
+        it "should set :http_proxypass" do
+          provider = Provider.new('url' => 'http://www.example.com', 'http_proxypass' => 'password')
+          provider.response.request.options[:http_proxypass].should == 'password'          
+        end
+      end
     end
   end
 

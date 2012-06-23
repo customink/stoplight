@@ -63,6 +63,11 @@ module Stoplight::Providers
         }
       end
 
+      url_options[:http_proxyaddr] ||= @options['http_proxyaddr']
+      url_options[:http_proxyport] ||= @options['http_proxyport']
+      url_options[:http_proxyuser] ||= @options['http_proxyuser']
+      url_options[:http_proxypass] ||= @options['http_proxypass']
+
       # merge with any additional options provided
       url_options.merge(options[:url_options]) if options[:url_options]
 
