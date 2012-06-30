@@ -29,7 +29,7 @@
 # Example Travis configuration
 # -
 #   type: 'travis'
-#   url: http://travis-ci.org/repositories.json
+#   url: http://travis-ci.org
 #   owner_name: my_projects # usually your github username
 #   culprits: true
 #   projects:

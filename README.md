@@ -65,7 +65,7 @@ If you have a lot of projects, you may want to selective display them on Stoplig
 ```yml
 -
   type: 'travis'
-  url: 'http://travis-ci.org/repositories.json'
+  url: 'http://travis-ci.org'
   ignored_projects:
     - /^rails-(.*)$/
     - some_other_project
