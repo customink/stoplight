@@ -15,7 +15,7 @@
 # Example Jenkis configuration
 # -
 #   type: 'jenkins'
-#   url: http://ci.jenkins.org/cc.xml
+#   url: http://ci.jenkins.org
 #   username: my_username
 #   password: my_password
 #   culprits: false
