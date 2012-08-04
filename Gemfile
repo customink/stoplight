@@ -9,6 +9,7 @@ gem 'rake'
 gem 'rspec'
 gem 'sinatra'
 gem 'time-lord'
+gem 'rabl'
 
 group :development do
   gem 'growl'

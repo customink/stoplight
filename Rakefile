@@ -14,3 +14,9 @@ RSpec::Core::RakeTask.new(:coverage) do |t|
   t.rcov = true
   t.rcov_opts = ['--exclude', 'spec']
 end
+
+desc "build and watch coffee files"
+task :coffee do
+  puts 'watching CoffeeScript files'
+  exec 'coffee -bcw public/javascripts/app/*.coffee'
+end

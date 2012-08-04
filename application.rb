@@ -2,6 +2,7 @@ configure {
   set :root, File.dirname(__FILE__)
 }
 
+
 #
 # GET /
 #
@@ -24,7 +25,11 @@ get '/' do
   @rows = (@unsuccessful_projects.size / @columns).ceil
   @rows = [@rows, 1.0].max
 
-  erb :index
+  if params['format'] == 'json'
+    render :rabl, :index, :format => 'json'
+  else
+    erb :index
+  end
 end
 
 #
