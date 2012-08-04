@@ -2,6 +2,13 @@ configure {
   set :root, File.dirname(__FILE__)
 }
 
+require 'rabl'
+Rabl.configure do |config|
+  config.include_json_root = false
+  config.include_child_root = false
+end
+Rabl.register!
+
 #
 # GET /
 #
@@ -24,7 +31,11 @@ get '/' do
   @rows = (@unsuccessful_projects.size / @columns).ceil
   @rows = [@rows, 1.0].max
 
-  erb :index
+  if params['format'] == 'json'
+    render :rabl, :index, :format => 'json'
+  else
+    erb :index
+  end
 end
 
 #
