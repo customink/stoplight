@@ -13,21 +13,6 @@ end
 #
 get '/projects.json' do
   load_projects
-
-  @successful_projects = @projects.select { |project| project.passed? }
-  @unsuccessful_projects = @projects.select { |project| !project.passed? }
-
-  size = @unsuccessful_projects.size
-  @columns = case
-  when size > 21 then 4.0
-  when size > 10 then 3.0
-  when size > 3 then 2.0
-  else 1.0
-  end
-
-  @rows = (@unsuccessful_projects.size / @columns).ceil
-  @rows = [@rows, 1.0].max
-
   render :rabl, :index, :format => 'json'
 end
 
