@@ -10,6 +10,8 @@ gem 'rspec'
 gem 'sinatra'
 gem 'time-lord'
 gem 'rabl'
+gem 'shotgun'
+
 
 group :development do
   gem 'guard-compass'

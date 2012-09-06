@@ -43,7 +43,13 @@ end
 private
 # Load the servers and projects from the YAML file
 def load_projects
-  @servers ||= YAML::load(File.read('config/servers.yml'))
+
+  if encoded = ENV['SERVERS_YML']
+    require 'base64'
+    @servers = YAML::load(Base64.decode64(encoded))
+  else
+    @servers ||= YAML::load(File.read('config/servers.yml'))
+  end
 
   @projects = @servers.collect do |server|
     server_projects = get_server(server).projects
