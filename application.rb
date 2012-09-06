@@ -2,10 +2,6 @@ configure {
   set :root, File.dirname(__FILE__)
 }
 
-get '/foo' do
-  status 200
-end
-
 #
 # GET /projects.json
 #
@@ -66,7 +62,7 @@ def load_projects
     else
       server_projects
     end
-  end.compact.flatten
+  end.compact.flatten.sort{ |a,b| a.name.downcase <=> b.name.downcase }
 end
 
 def collect_regexes(projects)

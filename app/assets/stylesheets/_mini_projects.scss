@@ -1,4 +1,4 @@
-aside#mini-projects {
+aside#projects-list {
   background: #eee;
   color: #fff;
   border-right: 1px solid #777;
@@ -13,7 +13,11 @@ aside#mini-projects {
   left: 0;
   bottom: -1px; // to offset the border-bottom on the last element iff the list > 100% height
 
-  a.project {
+  &.collapsed {
+    display: none;
+  }
+
+  a {
     @include background-image(linear-gradient(#eee, #ccc));
     border-bottom: 1px solid #777;
     @include box-shadow(inset, 0 1px 0 rgba(0,0,0,.3));
@@ -69,15 +73,42 @@ aside#mini-projects {
     &.building:before {
       color: $yellow !important;
     }
-  }
 
-  time.last-build-time {
-    float: left;
-    font-size: 9px;
-    overflow: hidden;
-    position: absolute;
+    time.last-build-time {
+      float: left;
+      font-size: 9px;
+      overflow: hidden;
+      position: absolute;
 
-    left: 25px;
-    top: 20px;
+      left: 25px;
+      top: 20px;
+    }
+
+    &.ignored {
+      color: $dark-gray*3.5;
+      padding: 10px 0 10px 25px;
+      text-shadow: 0 1px 0 #fff;
+
+      &:hover {
+        @include background-image(linear-gradient(#fafafa, #ddd));
+      }
+
+      &:active {
+        background: #ddd;
+      }
+
+      &:focus {
+        background: #ddd;
+        outline: 0;
+      }
+
+      &:before {
+        content: '';
+      }
+
+      time.last-build-time {
+        display: none;
+      }
+    }
   }
 }

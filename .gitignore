@@ -4,3 +4,5 @@
 config/servers.yml
 log/*.log
 tmp
+vendor/ruby
+vendor/cache

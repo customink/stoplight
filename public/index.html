@@ -16,56 +16,26 @@
       }
     </style>
 
-    <script id="tmpl-project-board" type="text/template"></script>
-
-    <script id="tmpl-project-success-tile" type="text/template">
-      <article class="project success">
-        <h1>
-          <a href="javascript:void();">&#x2713; Hooray!</a>
-        </h1>
-        <p class="status">All builds are passing!</p>
-      </article>
-    </script>
-
-    <script id="tmpl-project-tile" type="text/template">
-      <article class="project <%= last_build_status %> <%= current_status %>">
-        <h1>
-          <a href="<%= build_url %>" target="_TOP"><%= name %></a>
-        </h1>
-        <p class="status">
-          Build <%= last_build_id %> <strong><%= last_build_status %></strong>
-          <% if(last_build_time){ %>
-            <time class="build-time invisible" datetime="<%= last_build_time %>" title="<%= jQuery.timeago(last_build_time) %>">
-              <%= jQuery.timeago(last_build_time) %>
-            </time>
-          <% } %>
-        </p>
-      </article>
-    </script>
-
-    <script id="tmpl-project-list-item" type="text/template">
-      <a href="<%= build_url %>" class="project <%= last_build_status %> <%= current_status %>" target="_TOP">
-        <%= name %>
-        <% if(last_build_time){ %>
-          <time class="last-build-time" datetime="<%= last_build_time %>" title="<%= jQuery.timeago(last_build_time) %>">
-            <%= jQuery.timeago(last_build_time) %>
-          </time>
-        <% } %>
-      </a>
-    </script>
-  </head>
-
-  <body>
-    <aside id="mini-projects"></aside>
-    <div id="projects-board"><div>
-
     <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
     <script src="javascripts/vendor/jquery.timeago.js"></script>
     <script src="javascripts/vendor/underscore-min.js"></script>
     <script src="javascripts/vendor/backbone-min.js"></script>
-    <script src="javascripts/app/models.js"></script>
-    <script src="javascripts/app/views.js"></script>
-    <script src="javascripts/app/app.js"></script>
+    <script src="javascripts/vendor/keymaster.min.js"></script>
+    <script src="javascripts/vendor/backbone.shortcuts.min.js"></script>
+    <script src="javascripts/stoplight.js"></script>
+    <script src="javascripts/stoplight/project.js"></script>
+    <script src="javascripts/stoplight/projects.js"></script>
+    <script src="javascripts/stoplight/views/projects_board.js"></script>
+    <script src="javascripts/stoplight/views/projects_list.js"></script>
+    <script src="javascripts/stoplight/views/project_list_item.js"></script>
+    <script src="javascripts/stoplight/views/success_tile.js"></script>
+    <script src="javascripts/stoplight/views/failure_tile.js"></script>
+    <script src="javascripts/stoplight/app.js"></script>
+  </head>
+
+  <body>
+    <aside id="projects-list"></aside>
+    <div id="projects-board"><div>
   </body>
 </html>
 

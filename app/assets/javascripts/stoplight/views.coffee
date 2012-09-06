@@ -42,32 +42,6 @@ class MiniProjectsView extends Backbone.View
       @$el.append(v.el)
     @el
 
-class ProjectsBoardView extends Backbone.View
-  tagName: 'div'
-  id: 'projects-board'
-
-  render: ()=>
-    failed_projects = @model.where last_build_status: 'failed'
-    if failed_projects.length == 0
-      v = new ProjectSuccessTileView
-      @$el.html(v.render())
-    else
-      size = failed_projects.length
-      columns = if size > 21 then 4.0
-      else if size > 10 then 3.0
-      else if size > 3 then 2.0
-      else 1.0
-      rows = Math.ceil(size / columns)
-      rows = Math.max(rows, 1.0)
-
-      w = 100.0 / columns
-      h = 100.0 / rows
-      failed_projects.forEach (p)=>
-        v = new ProjectTileView(model: p, width: w, height: h)
-        v.render()
-        @$el.append(v.el)
-    @el
-
 class StoplightView extends Backbone.View
   tagName: 'div'
   id: 'stoplight'

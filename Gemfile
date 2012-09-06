@@ -12,7 +12,6 @@ gem 'time-lord'
 gem 'rabl'
 
 group :development do
-  gem 'growl'
   gem 'guard-compass'
   gem 'guard-coffeescript'
   gem 'guard-rspec'
