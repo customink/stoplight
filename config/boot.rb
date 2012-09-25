@@ -15,5 +15,6 @@ Rabl.register!
 require 'application'
 
 require 'logger'
-$logger = Logger.new('log/application.log')
+class ::Logger; alias_method :write, :<<; end
+$logger = ::Logger.new('log/application.log')
 use Rack::CommonLogger, $logger
