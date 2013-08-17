@@ -30,3 +30,13 @@
 #     - /^test/ # all builds starting with "test"
 #   ignored_projects:
 #     - not_me  # ignore the project named "not_me"
+#
+# Example Thoughtworks Go Configuration
+# -
+#   type: 'thoughtworks_go'
+#   url: http://my.go.server:8153
+#   username: go_username
+#   password: password
+#   projects:
+#     - /.*::.*::.*/ #To show only jobs and not stages
+#

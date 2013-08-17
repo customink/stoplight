@@ -9,6 +9,7 @@ gem 'rake',               '~> 10.1.0'
 gem 'sinatra',            '~> 1.4.3'
 gem 'time-lord',          '~> 1.0.1'
 gem 'rabl',               '~> 0.8.5'
+gem 'xml-simple',         '~> 1.1.2'
 
 group :development do
   gem 'guard',                    '~> 1.0.3'
